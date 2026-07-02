@@ -34,15 +34,6 @@
 - `collect_reviews.py` — быстрый запуск сбора отзывов
 - `scheduler.py` — фоновый мониторинг
 
-**Статус площадок:**
-| Площадка | Статус | Примечание |
-|---|---|---|
-| Сайт `elcador.ru/otzyvy` | Работает | 279 отзывов, средний рейтинг 4.84 |
-| Яндекс.Карты | Работает | 20 отзывов, средний рейтинг 4.8 |
-| 2GIS | Капча | Требует антибот-обхода |
-| Plaso.pro | Капча | Блокируется проверкой |
-| RemKarta | Не загружается в HTML | Требует доработки |
-| Zoon.ru | Нет текстовых отзывов | Только оценки |
 
 **Чему научился:**
 - Парсить статичные и динамичные сайты
@@ -52,22 +43,6 @@
 - Дедуплицировать данные
 - Подключать уведомления, планировщик и веб-интерфейс
 
-**Запуск:**
-```powershell
-cd C:\project\elkadzor-reviews
-python -m venv .venv
-.\.venv\Scripts\pip install -r requirements.txt
-.\.venv\Scripts\playwright install chromium
-copy .env.example .env
-# добавь TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID
-
-# сбор отзывов
-.\.venv\Scripts\python collect_reviews.py
-
-# дашборд
-$env:STREAMLIT_SERVER_HEADLESS="true"
-.\.venv\Scripts\python -m streamlit run dashboard.py
-```
 
 ---
 
